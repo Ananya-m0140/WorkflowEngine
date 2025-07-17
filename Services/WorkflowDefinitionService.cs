@@ -31,4 +31,8 @@ public class WorkflowDefinitionService
 
     public WorkflowDefinition? GetDefinition(string id) =>
         _store.Definitions.FirstOrDefault(d => d.Id == id);
+
+    
+    public List<WorkflowDefinition> GetAllDefinitions() =>
+        _store.Definitions;
 }

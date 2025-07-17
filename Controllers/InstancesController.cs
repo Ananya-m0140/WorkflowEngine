@@ -34,4 +34,12 @@ public class WorkflowInstancesController : ControllerBase
         var instance = _service.GetInstance(id);
         return instance is not null ? Ok(instance) : NotFound("Instance not found");
     }
+
+    // ✅ New method to get all workflow instances
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        var instances = _service.GetAllInstances();
+        return Ok(instances);
+    }
 }

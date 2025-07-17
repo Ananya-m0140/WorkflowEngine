@@ -52,4 +52,10 @@ public class WorkflowInstanceService
 
     public WorkflowInstance? GetInstance(string id) =>
         _store.Instances.FirstOrDefault(i => i.Id == id);
+
+        public List<WorkflowInstance> GetAllInstances()
+{
+    return _store.Instances.ToList();
+}
+
 }

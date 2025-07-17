@@ -28,4 +28,12 @@ public class WorkflowDefinitionsController : ControllerBase
         var def = _service.GetDefinition(id);
         return def is not null ? Ok(def) : NotFound("Definition not found");
     }
+
+    
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        var allDefinitions = _service.GetAllDefinitions();
+        return Ok(allDefinitions);
+    }
 }
